@@ -28,7 +28,7 @@ class Menu_window(QWidget):
         self.creditbutton.clicked.connect(self.creditopen)
 
         self.link_label = QLabel(self)
-        self.link_label.setText('"https://github.com/jinya11/myproject"')
+        self.link_label.setText('"https://github.com/jinya11/final-myproject"')
         self.link_label.setGeometry(300, 550, 500, 50)
 
         self.open_link_button = QPushButton('Open Link', self)
