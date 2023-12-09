@@ -55,6 +55,9 @@ class TrustWindow(QWidget):
         self.end_button.setGeometry(900, 10, 50, 50)
         self.end_button.clicked.connect(self.go_backmain_to_chap1)
 
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.go_back_to_chap1)
+
     def go_backmain_to_chap1(self):
         self.switch_window.emit()
         self.close()
@@ -75,8 +78,7 @@ class TrustWindow(QWidget):
             self.answer_label.setText("정답 3초 후 이전 화면으로 돌아갑니다.")
             self.answer_label.setGeometry(550, 500, 300, 30)
 
-            self.timer = QTimer(self)
-            self.timer.timeout.connect(self.go_back_to_chap1)
+
             self.timer.start(3000)  # 3000 milliseconds (3 seconds)
 
         else:
