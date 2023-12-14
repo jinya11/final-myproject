@@ -82,7 +82,7 @@ class TrustWindow(QWidget):
                           수영자를 집어 들었다.'''
 
         user_answer= user_answer.replace(',', '')
-        important_words = {"소방관", "호수", "물"}
+        important_words = {"소방관이","호수에서","물을"}
 
 
 

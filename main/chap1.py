@@ -1,11 +1,13 @@
 
+####
+     # pyqt6을 이용한 GUI 프로그래밍
+####
+
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 import os
 from pytube import YouTube
 from PyQt6.QtCore import pyqtSignal
-
-
 
 
 class Chap1Window(QWidget):

@@ -50,25 +50,17 @@ class TrustWindow(QWidget):
 
         self.answer_label = QLabel(self)
 
-        self.end_button = QPushButton(self)
-        self.end_button.setText("End")
-        self.end_button.setGeometry(900, 10, 50, 50)
-        self.end_button.clicked.connect(self.go_backmain_to_chap1)
-
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.go_back_to_chap1)
 
-    def go_backmain_to_chap1(self):
-        self.switch_window.emit()
-        self.close()
 
     def check_answer(self):
         if self.answer_cnt <=1:
             self.input_field.setPlaceholderText("3회 실패")
             self.enter_button.hide()
-            timer = QTimer(self)
-            timer.timeout.connect(self.go_back_to_chap1)
-            timer.start(3000)
+
+            self.timer.timeout.connect(self.go_back_to_chap1)
+            self.timer.start(3000)
 
 
         user_answer = self.input_field.text().strip().lower()

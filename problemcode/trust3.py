@@ -128,6 +128,7 @@ class TrustWindow(QWidget):
     def hide_evidence_button(self):
         self.evidence_button.hide()
         self.evidence_button2.hide()
+        self.time_end_label.setText(" ")
 
     def check_answer(self):
         user_answer = self.input_field.text().strip()
@@ -146,7 +147,6 @@ class TrustWindow(QWidget):
 
 
         else:
-
             self.answer_label.setText("오답 ")
             self.answer_label.setGeometry(550, 500, 300, 30)
 
@@ -155,9 +155,6 @@ class TrustWindow(QWidget):
         self.timer.timeout.disconnect(self.go_back_to_chap1)
         self.timer.stop()
         self.close()
-
-
-
 
 
 class Evidence(QWidget):

@@ -85,7 +85,7 @@ class Music(QWidget):
         for correct_line in correct_answers:
             # Convert correct_line tuple to a set after removing spaces
             correct_line_set = set(word.replace(" ", "") for word in correct_line)
-            print(correct_line_set)
+
             # Check if user's answer is a subset of the correct answer
             if not user_answer:
                 # user_answer에 문장이 없으면 오답 처리
@@ -118,7 +118,7 @@ class Music(QWidget):
             file_path = os.path.join(self.music_directory, file_name)
 
             self.media_player.setSource(QUrl.fromLocalFile(file_path))
-            self.audio_output.setVolume(50)  # 볼륨 설정
+            self.audio_output.setVolume(2)  # 볼륨 설정
             self.media_player.play()
 
             self.answer_label.clear()
